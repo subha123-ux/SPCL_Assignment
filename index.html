@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Booking System</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Event Booking System</h1>
+        <div class="main-content">
+            <div class="left-panel">
+                <div class="calendar-section">
+                    <input type="text" id="event-date" placeholder="Select a date" />
+                </div>
+                <div class="form-section">
+                    <form id="booking-form">
+                        <input type="text" id="name" placeholder="Name" required />
+                        <input type="email" id="email" placeholder="Email" required />
+                        <input type="tel" id="contact" placeholder="Contact Number" required />
+                        <textarea id="details" placeholder="Event Details (type, attendees, etc.)" required></textarea>
+                        <br><br><br><br><br>
+                        <button type="submit">Book Event</button>
+                    </form>
+
+                    <div id="booking-summary" style="display: none;" class="summary-box">
+                        <h3>Review Your Booking</h3>
+                        <p><strong>Name:</strong> <span id="summary-name"></span></p>
+                        <p><strong>Email:</strong> <span id="summary-email"></span></p>
+                        <p><strong>Contact:</strong> <span id="summary-contact"></span></p>
+                        <p><strong>Date:</strong> <span id="summary-date"></span></p>
+                        <p><strong>Details:</strong> <span id="summary-details"></span></p>
+                        <button id="confirm-booking">Confirm Booking</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <h2>Calendar</h2>
+                <div id="calendar"></div>
+                <div id="event-info" class="tooltip-panel">Select a date to view event details.</div>
+                <button id="cancel-date-btn">Cancel a Booking</button>
+                <input type="text" id="cancel-date-picker" style="display:none;" />
+            </div>
+        </div>
+
+        <div class="upcoming-events">
+            <h2>Upcoming Events</h2>
+            <div id="events-list" class="events-list"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
